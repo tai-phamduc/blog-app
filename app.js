@@ -5,9 +5,9 @@ const mongoose = require("mongoose")
 const dotenv = require("dotenv").config()
 const handleError = require("./middelwares/errorHandlerMiddleware")
 
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log("Mongodb connected at ", process.env.MONGODB_URI))
-  .catch(() => console.log("Cannot connect to mongodb at ", process.env.MONGO_URI))
+  .catch(() => console.log("Cannot connect to mongodb at ", process.env.MONGODB_URI))
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))

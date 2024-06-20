@@ -31,6 +31,7 @@ const createBlog = asyncHandler(async (req, res) => {
 // update
 const updateBlog = asyncHandler(async (req, res) => {
   const { id } = req.params
+  const blog = await Blog.findById(id)
   if (!blog) {
     res.status(400)
     throw new Error("Blog doesn't exist")
